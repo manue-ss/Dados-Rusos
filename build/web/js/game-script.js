@@ -19,7 +19,7 @@ function distribuirJugadores() {
 
     // Radio del círculo imaginario donde se sentarán los jugadores.
     // 165px es ideal para que no pisen el centro (radio 125px) ni se salgan de la mesa (radio 225px)
-    const radio = 165;
+    const radio = 225;
 
     // --- CONFIGURACIÓN DE LAS CARTAS ---
     // Dimensiones definidas en tu CSS para poder centrarlas en su propio eje
