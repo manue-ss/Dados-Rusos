@@ -1,0 +1,52 @@
+<!doctype html>
+<!--
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/Html.html to edit this template
+-->
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" href="css/form-style.css" />
+    </head>
+    <body>
+        <div class="form-container">
+            <form action="StartServlet" class="game-form" method="post">
+                <h1 class="form-title">Dados Rusos</h1>
+
+                <div class="input-container">
+                    <ion-icon name="people-outline"></ion-icon>
+                    <input
+                        type="number"
+                        class="form-input"
+                        min="2"
+                        name="numPlayers"
+                        id="numPlayers"
+                        placeholder="Numero de jugadores"
+                        required />
+                </div>
+                <div class="input-container">
+                    <ion-icon name="dice-outline"></ion-icon>
+                    <input
+                        type="number"
+                        class="form-input"
+                        min="4"
+                        max="10"
+                        name="numFaces"
+                        id="numFaces"
+                        placeholder="Caras del dado (min.4)"
+                        required />
+                </div>
+                <button type="submit" class="btn">Iniciar Juego</button>
+            </form>
+        </div>
+
+        <script
+            type="module"
+            src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+        <script
+            nomodule
+            src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+    </body>
+</html>
