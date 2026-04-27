@@ -1,0 +1,42 @@
+# Archivos compilados
+*.class
+
+# Carpetas de construcción y distribución de NetBeans (Ant)
+/build/
+/dist/
+
+# Configuraciones privadas de NetBeans (No se deben subir)
+/nbproject/private/
+/nbproject/project.xml.user
+
+# Empaquetados Web
+*.war
+
+# -------------------------------------------------------------
+# Opcional: Ignorar archivos de otros IDEs (por si cambias luego)
+# -------------------------------------------------------------
+# VS Code
+.vscode/
+
+# IntelliJ IDEA
+.idea/
+*.iml
+
+# Eclipse
+.settings/
+.classpath
+.project
+
+# -------------------------------------------------------------
+# Ignorar archivos generados por el Sistema Operativo
+# -------------------------------------------------------------
+# Windows
+Thumbs.db
+ehthumbs.db
+$RECYCLE.BIN/
+
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+._*
