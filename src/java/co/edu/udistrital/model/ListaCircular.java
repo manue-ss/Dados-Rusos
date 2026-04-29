@@ -72,10 +72,11 @@ public class ListaCircular {
      * actual.
      *
      * @param dato El valor o nombre del jugador que se desea eliminar de la
-     * ronda.
+     *             ronda.
+     *
      * @return {@code true} si el jugador fue encontrado y eliminado
-     * exitosamente, {@code false} si la lista está vacía o el jugador no
-     * existe.
+     *         exitosamente, {@code false} si la lista está vacía o el jugador
+     *         no existe.
      */
     public boolean remove(String dato) {
         if (tamanio == 0) {
@@ -135,8 +136,8 @@ public class ListaCircular {
      * Útil para actualizar interfaces gráficas o consolas de estado.
      *
      * @return Una lista de tipo {@code List<String>} que contiene la
-     * representación en texto de todos los jugadores activos en su orden
-     * actual.
+     *         representación en texto de todos los jugadores activos en su
+     *         orden actual.
      */
     public List<String> getAll() {
         ArrayList<String> datosNodos = new ArrayList<>();
