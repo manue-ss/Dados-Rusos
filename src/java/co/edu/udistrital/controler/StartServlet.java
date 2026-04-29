@@ -15,8 +15,13 @@ import jakarta.servlet.http.HttpServletResponse;
 import jakarta.servlet.http.HttpSession;
 
 /**
- *
- * @author Acer-Pc
+ * Controlador encargado de inicializar la sesión de juego.
+ * Recibe los parámetros iniciales (jugadores y caras del dado), configura la
+ * estructura de datos circular y redirige el flujo hacia la vista principal
+ * del juego.
+ * 
+ * @author Manuel Salazar
+ * @author Sebastian Guzman
  */
 @WebServlet(name = "StartServlet", urlPatterns = {"/StartServlet"})
 public class StartServlet extends HttpServlet {
@@ -24,6 +29,11 @@ public class StartServlet extends HttpServlet {
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
      * methods.
+     * Centraliza la lógica de inicio:
+     * 1. Captura el número de jugadores y caras del dado desde el formulario.
+     * 2. Crea e instancia la {@code ListaCircular} y el objeto {@code Dado}.
+     * 3. Almacena los objetos en la sesión del usuario.
+     * 4. Prepara los atributos necesarios para la renderización en el JSP.
      *
      * @param request servlet request
      * @param response servlet response
@@ -40,7 +50,6 @@ public class StartServlet extends HttpServlet {
 
             HttpSession session = request.getSession();
 
-            // 3. Instanciamos el dado directamente
             Dado dado = new Dado(numeroCaras);
 
             ListaCircular jugadores = null;

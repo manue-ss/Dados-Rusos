@@ -16,8 +16,12 @@ import jakarta.servlet.http.HttpSession;
 import java.util.List;
 
 /**
- *
- * @author Acer-Pc
+ * Controlador encargado de gestionar la mecánica principal del juego.
+ * Administra el lanzamiento de datos, la eliminación de jugadores basada en el
+ * resultado y la determinación del estado de victoria.
+ * 
+ * @author Manuel Salazar
+ * @author Sebastian Guzman
  */
 @WebServlet(name = "ThrowDiceServlet", urlPatterns = {"/ThrowDiceServlet"})
 public class ThrowDiceServlet extends HttpServlet {
@@ -25,6 +29,14 @@ public class ThrowDiceServlet extends HttpServlet {
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
      * methods.
+     * Procesa la lógica de cada turno en el juego de la siguiente manera:
+     * 1. Recupera los objetos {@code Dado} y {@code ListaCircular} de la 
+     * sesión.
+     * 2. Genera el valor del dado y aplica la regla de eliminación (si el
+     * jugador es impar).
+     * 3. Gestiona el avance de turno si no hubo eliminación.
+     * 4. Verifica si solo queda un jugador activo para declarar un ganador.
+     * 5. Actualiza la vista {@code game.jps} o redirige a {@code winnerPage.jsp}.
      *
      * @param request servlet request
      * @param response servlet response
@@ -45,6 +57,8 @@ public class ThrowDiceServlet extends HttpServlet {
 
             int valor = dado.lanzar();
             boolean fueEliminado = false;
+            
+            request.setAttribute("Tirador", actual);
 
             if ((valor % 2) == 1) {
                 fueEliminado = jugadores.remove(actual);
