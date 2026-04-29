@@ -7,11 +7,12 @@ import java.util.Random;
  * para generar resultados aleatorios.
  *
  * @author Manuel Salazar
+ * @author Sebastian Guzman
  */
 public class Dado {
 
     /**
-     * Número de caras que tiene el dado (ej. 6 para un dado tradicional).
+     * Número de caras que tiene el dado. (ej. 6 para un dado tradicional).
      */
     private final int caras;
 
