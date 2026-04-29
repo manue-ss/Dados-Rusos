@@ -10,6 +10,7 @@ import java.util.List;
  * asegurando que el último elemento siempre apunte al primero.
  *
  * @author Manuel Salazar
+ * @author Sebastian Guzman
  */
 public class ListaCircular {
 
@@ -123,7 +124,6 @@ public class ListaCircular {
 
     /**
      * Avanza el puntero del turno actual al siguiente nodo en la lista.
-     *
      * Fundamental para iterar a través de los jugadores (ej. al lanzar el
      * dado).
      */
