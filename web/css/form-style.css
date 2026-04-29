@@ -2,58 +2,61 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    /* Fuente por defecto más limpia si no estás cargando una externa */
     font-family: "Segoe UI", system-ui, sans-serif;
 }
 
 body {
-    background: #f4f7f6; /* Un gris un poco más claro y moderno */
+    background: #1a1c20; /* Fondo oscuro unificado con el resto del juego */
     display: flex;
     justify-content: center;
     align-items: center;
-    min-height: 100vh; /* Mejor que 'height' fijo por si en móviles sale un teclado virtual */
+    min-height: 100vh;
 }
 
 .form-container {
     padding: 40px;
-    background: white;
-    /* Sombra más suave y difuminada (efecto neumórfico sutil) */
-    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+    /* Efecto "Glassmorphism" para que parezca una tarjeta de casino sobre la mesa */
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5); /* Sombra más dramática */
     border-radius: 1.5rem;
     display: flex;
     flex-direction: column;
     align-items: center;
     width: 100%;
-    max-width: 400px; /* Mantiene la proporción en monitores anchos */
+    max-width: 400px;
 }
 
 .form-container h1 {
     text-align: center;
     margin-bottom: 30px;
-    padding-bottom: 15px; /* Espacio para que la línea no pegue al texto */
-    border-bottom: 2px solid #f0f0f0;
-    color: #333;
+    padding-bottom: 15px;
+    border-bottom: 2px solid rgba(255, 255, 255, 0.1); /* Línea divisoria sutil */
+    color: #ffffff; /* Texto blanco para contrastar con el fondo oscuro */
     width: 100%;
+    letter-spacing: 1px;
 }
 
 .input-container {
     width: 100%;
-    border: 2px solid #e0e0e0;
+    /* Inputs con fondo oscuro semi-transparente */
+    background-color: rgba(0, 0, 0, 0.2);
+    border: 2px solid rgba(255, 255, 255, 0.1);
     margin-bottom: 20px;
-    padding: 5px 15px; /* Controlamos el tamaño con padding, no con height fijo */
+    padding: 5px 15px;
     display: flex;
     flex-direction: row;
     align-items: center;
     border-radius: 1.5rem;
-    background-color: #fafafa;
-    transition: all 0.3s ease; /* Transición suave para todos los cambios de estado */
+    transition: all 0.3s ease;
 }
 
-/* Efecto visual cuando el usuario está escribiendo en el input */
+/* Efecto visual de "peligro/tensión" cuando el usuario está escribiendo */
 .input-container:focus-within {
-    border-color: #4caf50;
-    background-color: #ffffff;
-    box-shadow: 0 0 0 4px rgba(76, 175, 80, 0.1); /* Aura verde sutil */
+    border-color: #e53935; /* Rojo Ruleta Rusa */
+    background-color: rgba(0, 0, 0, 0.4);
+    box-shadow: 0 0 0 4px rgba(229, 57, 53, 0.15); /* Aura roja sutil */
 }
 
 .input-container ion-icon {
@@ -63,9 +66,9 @@ body {
     transition: color 0.3s ease;
 }
 
-/* El icono también se pinta de verde al escribir */
+/* El icono también se pinta de rojo al escribir */
 .input-container:focus-within ion-icon {
-    color: #4caf50;
+    color: #e53935;
 }
 
 .form-container input {
@@ -74,36 +77,42 @@ body {
     outline: none;
     background: transparent;
     font-size: 16px;
-    color: #333;
+    color: #ffffff; /* El texto que escribe el usuario ahora es blanco */
     padding: 10px 0;
 }
 
 .form-container input::placeholder {
-    color: #aaa;
+    color: #777777; /* Placeholder más oscuro para que no se confunda con texto real */
 }
 
+/* Botón de Iniciar Juego */
 .form-container .btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
     border: none;
     padding: 14px 20px;
     border-radius: 1.5rem;
-    font-size: 16px;
-    font-weight: 600; /* Corregido: grosores son múltiplos de 100 o palabras (bold) */
+    font-size: 1.1rem;
+    font-weight: bold;
     cursor: pointer;
     width: 100%;
     margin-top: 10px;
-    background: #4caf50;
+    background: #e53935; /* Rojo peligro unificado con el botón de "Tirar Dado" */
     color: white;
-    transition: all 0.3s ease; /* Prepara el botón para animaciones */
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 10px rgba(229, 57, 53, 0.4);
 }
 
 /* Interacción del botón */
 .form-container .btn:hover {
-    background: #43a047; /* Verde un poco más oscuro */
-    transform: translateY(-2px); /* Pequeño salto hacia arriba */
-    box-shadow: 0 6px 15px rgba(76, 175, 80, 0.3);
+    background: #f44336;
+    transform: translateY(-3px);
+    box-shadow: 0 6px 15px rgba(229, 57, 53, 0.6);
 }
 
 .form-container .btn:active {
-    transform: translateY(0); /* Vuelve a su lugar al hacer clic */
+    transform: translateY(0);
     box-shadow: none;
 }

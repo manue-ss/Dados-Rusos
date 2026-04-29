@@ -58,7 +58,10 @@ public class ThrowDiceServlet extends HttpServlet {
             List<String> activos = jugadores.getAll();
 
             if (activos.size() == 1) {
-               //request.setAttribute("MensajeGanador", "¡" + activos.get(0) + " ha sobrevivido y es el ganador!");
+                request.setAttribute("Ganador", jugadores.getActual());
+                request.getRequestDispatcher("winnerPage.jsp").forward(request, response);
+
+                return;
             }
 
             session.setAttribute("ListaJugadores", jugadores);
@@ -71,7 +74,7 @@ public class ThrowDiceServlet extends HttpServlet {
 
             request.getRequestDispatcher("game.jsp").forward(request, response);
 
-        } catch (Exception e) {
+        } catch (ServletException | IOException e) {
             e.printStackTrace();
             response.sendRedirect("index.jsp?error=error_juego");
         }
