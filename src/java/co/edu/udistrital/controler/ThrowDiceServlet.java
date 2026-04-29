@@ -57,6 +57,8 @@ public class ThrowDiceServlet extends HttpServlet {
 
             int valor = dado.lanzar();
             boolean fueEliminado = false;
+            
+            request.setAttribute("Tirador", actual);
 
             if ((valor % 2) == 1) {
                 fueEliminado = jugadores.remove(actual);

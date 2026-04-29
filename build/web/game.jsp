@@ -3,7 +3,7 @@
 <!doctype html>
 <html lang="es">
     <head>
-        <title>Ruleta Rusa - Mesa de Juego</title>
+        <title>Dados Rusos - Mesa de Juego</title>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <link rel="stylesheet" href="css/game-style.css" />
@@ -16,7 +16,9 @@
                     <h1 class="turn-indicator">Turno de:<br><span id="current-player">${Actual}</span></h1>
                     
                     <c:if test="${not empty ResultadoDado}">
-                        <p class="dice-result">Sacaste un: <strong>${ResultadoDado}</strong></p>
+                        <p class="dice-result">
+                            ${Tirador} sacó un: <strong>${ResultadoDado}</strong>
+                        </p>
                     </c:if>
 
                     <c:if test="${not empty MensajeEliminacion}">
